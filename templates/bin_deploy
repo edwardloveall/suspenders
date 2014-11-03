@@ -4,12 +4,6 @@
 
 set -e
 
-if ! command -v open >/dev/null; then
-  open() {
-    $BROWSER "$@"
-  }
-fi
-
 branch="$(basename "$(git symbolic-ref HEAD)")"
 
 if [ -z "$1" ]; then
