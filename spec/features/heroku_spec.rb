@@ -22,7 +22,7 @@ feature 'Heroku' do
 
     readme = IO.read("#{project_path}/README.md")
 
-    expect(bin_deploy).to include("./bin/deploy staging")
-    expect(bin_deploy).to include("./bin/deploy production")
+    expect(readme).to include("./bin/deploy staging")
+    expect(readme).to include("./bin/deploy production")
   end
 end
