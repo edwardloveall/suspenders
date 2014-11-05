@@ -177,7 +177,7 @@ module Suspenders
     end
 
     def setup_bundler_audit
-      say 'Setting up bundler-audit'
+      say "Setting up bundler-audit"
       build :setup_bundler_audit
     end
 
