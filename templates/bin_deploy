@@ -1,16 +1,10 @@
-#!/usr/bin/env sh
+#!/bin/sh
 
 # Run this script to deploy the app to Heroku.
 
-set -e
-
 branch="$(basename "$(git symbolic-ref HEAD)")"
+target="${1:-staging}"
 
-if [ -z "$1" ]; then
-  printf "You must provide an environment (staging|production).\n"
-  exit 1
-else
-  git push "$1" "$branch:master"
-  heroku run rake db:migrate --remote "$1"
-  heroku restart --remote "$1"
-fi
+git push "$target" "$branch:master" &&
+  heroku run rake db:migrate --remote "$target" &&
+  heroku restart --remote "$target"
