@@ -328,7 +328,7 @@ you can deploy to staging and production with:
     $ ./bin/deploy production
       MARKDOWN
 
-      append_file "bin/deploy", instructions
+      append_file "README.md", instructions
     end
 
     def create_github_repo(repo_name)
